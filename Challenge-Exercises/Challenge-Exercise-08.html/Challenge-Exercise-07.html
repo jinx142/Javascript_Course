@@ -1,0 +1,78 @@
+<html>
+    <!DOCTYPE html>
+    <head>
+        <title>Challenge-Exercise-07</title>
+    </head>
+
+    <body>
+        <script>
+            function a7_b7_c7() {
+                function greet(name) {
+                    if(!name) {
+                        console.log(`Hi there!`)
+                    } else console.log(`Hello! ${name}`)
+                }
+                greet('Ahmad');
+                greet('Wael');
+                greet();
+            }
+
+            function d7_e7_f7() {
+                function convertToFahrenheit(celsius) {
+                    return (celsius * 9 / 5) + 32;
+                }
+    
+                function convertToCelsius(fahrenheit) {
+                    return (fahrenheit - 32) * 5 / 9;
+                }
+    
+                function convertTemperature(degrees, unit) {
+                    if (unit === 'C') {
+                        const result = convertToFahrenheit(degrees);
+                        return `${result}F`;
+                    } else if (unit === 'F') {
+                        const result = convertToCelsius(degrees);
+                        return `${result}C`;
+                    }
+                }
+                console.log(convertTemperature(25, 'C'));
+                console.log(convertTemperature(86, 'F'));
+            }
+            
+            function g7_h7_i7() {
+                function convertLength (length, from, to) {
+                    if (from !== 'km' && from !== 'miles' && from !== 'ft') {
+                        return `Invalid unit: ${from}`;
+                    } else if (to !== 'km' && to !== 'miles' && to !== 'ft') {
+                        return `Invalid unit: ${to}`;
+                    }
+                    if (from === to) {
+                        return `${length} ${from}`;
+                    }
+                    if(from ==='miles') {
+                        if (to === 'km') {
+                            return length * 1.6 + ' km';
+                        } else return length * 5280 + ' ft';
+                    } else if (from ==='km') {
+                        if (to === 'miles') {
+                            return length / 1.6 + ' miles';
+                        } else return length * 3281 + ' ft';
+                    } else if (from ==='ft') {
+                        if (to === 'miles') {
+                            return length / 5280 + ' miles';
+                        } else return length / 3281 + ' km';
+                    }
+                }
+                console.log(convertLength(50, 'miles', 'km'));
+                console.log(convertLength(32, 'km', 'miles'));
+                console.log(convertLength(50, 'km', 'km'));
+    
+                console.log(convertLength(5, 'miles', 'km'));
+                console.log(convertLength(5, 'miles', 'ft'));
+                console.log(convertLength(5, 'km', 'ft'));
+    
+                console.log(convertLength(5, 'lbs', 'lbs'));
+            }
+        </script>
+    </body>
+</html>
